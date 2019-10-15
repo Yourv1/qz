@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dom</title>
+</head>
+<body>
+    <div id="kk">布局
+        <ul>
+            <li>111</li>
+            <li class="item">222
+                <span>haha1</span>
+                <span>haha2</span>
+            </li>
+            <li class="item">333</li>
+            <span>444</span>
+            <span>555</span>
+        </ul>
+    </div>
+
+
+    <script>
+        var kk=document.getElementById('kk');
+        console.log(kk);
+        //getElementsByTagName通过标签名访问dom节点----》返回值是节点列表（类数组）
+        var li=document.getElementsByTagName('li')[0];
+        console.log(li);
+        //getElementsByClassName通过类名访问dom节点----》返回值是节点列表（类数组）
+        var item=document.getElementsByClassName('item')[1];
+        console.log(item);
+        //querySelector方法返回匹配指定 CSS 选择器元素的第一个子元素
+        //querySelector存在兼容性问题---低版本的ie是不支持的
+        var header=document.querySelector('#kk ul li span');
+        console.log(header);
+        //querySelectorAll方法返回匹配指定 CSS 选择器元素的所有子元素节点列表
+        var header1=document.querySelectorAll('#kk ul li>span')[0];
+        console.log(header1);
+    </script>
+</body>
+</html> 

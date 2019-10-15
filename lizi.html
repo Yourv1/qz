@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现本地时钟效果</title>
+</head>
+<body>
+    <div id="jsClock"></div>
+
+
+    <script>
+        //1.date对象   2.setInterval间隔型定时器   3.dom操作
+        //通过getElementById获取到dom节点
+        var jsClock=document.getElementById('jsClock');
+        //innerHTML获取到带有标签的节点
+        console.log(jsClock.innerHTML);
+        var oDate=new Date();
+        //getTime---时间戳---从公元1970年1月一日开始到现在的毫秒数   1s=1000ms
+        console.log(oDate.getTime())
+        //getFullYear--获取到年
+        console.log(oDate.getFullYear())//2018
+        //getMonth--获取到的月份--从0开始---每次在用的时候+1
+        console.log(oDate.getMonth())
+        //getDate---获取到的日期
+        console.log(oDate.getDate())//
+        //getDay---星期几也是从0开始
+        console.log(oDate.getDay())//
+        //getHours--获取到小时
+        console.log(oDate.getHours())
+        //getMinutes--获取到的分钟
+        console.log(oDate.getMinutes())
+        //getSeconds--获取到的秒
+        console.log(oDate.getSeconds())
+        var timer=setInterval(function(){
+            oDate=new Date();
+            jsClock.innerHTML=oDate;
+        },1000);
+    </script>
+</body>
+</html>

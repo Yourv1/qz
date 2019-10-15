@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li>1111</li>
+            <li>3333</li>
+            <li>4444</li>
+        </ul>
+        
+    </div>
+
+    <script>
+        //createElement----创建节点
+        //innerHTML----有赋值语句（修改文本或设置文本）----没有赋值语句（获取文本）
+        //appendChild----追加
+        var header=document.getElementById('header');
+        var p=document.createElement('p');
+        p.innerHTML='哈哈哈';
+        header.appendChild(p);
+
+        //insertBefor(新增节点,参考节点)
+        //第一种方式
+        var list=document.querySelector('#header ul');//获取到的ul节点
+        console.log(list);
+        var achild=list.children[1];//参考节点
+        console.log(achild);
+        var newLi=document.createElement('li');//创建节点
+        newLi.innerHTML='2222';
+        achild.parentNode.insertBefore(newLi,achild);
+        //第二种方式
+        var list1=document.querySelectorAll('#header ul li')[1];//参考节点
+        console.log(list1);
+        var newLi1=document.createElement('li');//新增节点
+        newLi1.innerHTML='0000';
+        list1.parentNode.insertBefore(newLi1,list1);
+        //removeChild---找到父节点然后再删除
+        var lastChild=document.querySelectorAll('#header ul li')[4];
+        console.log(lastChild);
+        lastChild.parentNode.removeChild(lastChild);
+
+        //删除最后一次
+        var last=document.querySelector('#header ul');
+        console.log(last);
+        var ach=document.querySelectorAll('#header ul li')[last.children.length-1];
+        ach.parentNode.removeChild(ach);
+    </script>
+    
+</body>
+</html>

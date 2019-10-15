@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div2{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <div class="div1">哈哈</div>
+
+
+    <script>
+        var oDiv=document.querySelector('.div1');
+        console.log(oDiv);
+        console.log(oDiv.classList.length)
+        console.log(oDiv.classList.add('div2'));
+        // console.log(oDiv.classList.remove('div2'));
+
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            oDiv.classList.toggle('div2')
+        }
+
+    </script>
+</body>
+</html>
